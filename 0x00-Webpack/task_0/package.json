@@ -4,7 +4,7 @@
   "description": "This is my first webpack task",
   "main": "index.js",
   "scripts": {
-    "dev":  "webpack --mode development",
+    "dev": "webpack --mode development",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -15,6 +15,6 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.4"
   }
 }
