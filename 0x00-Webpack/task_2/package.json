@@ -21,6 +21,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
+    "image-webpack-loader": "^8.1.0",
     "jquery": "^3.6.4",
     "lodash": "^4.17.21"
   }

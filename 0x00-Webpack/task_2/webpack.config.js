@@ -1,46 +1,38 @@
 const path = require("path");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: "production",
+  mode: 'production',
   entry: {
-    main: path.resolve(__dirname, "./js/dashboard_main.js"),
+    main: path.resolve(__dirname, './js/dashboard_main.js'),
   },
   output: {
-    path: path.resolve(__dirname, "public"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
   },
   performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
+		maxAssetSize: 1000000,
+    maxEntrypointSize: 1000000,
+	},
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource',
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'images/[name].[hash:7].[ext]',
-              esModule: false,
-            },
-          },
-        ],
+          'file-loader',
+					{
+						loader: 'image-webpack-loader',
+						options: {
+							bypassOnDebug: true,
+							disable: true,
+						},
+					},
+				],
       },
-    ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css',
-    }),
-  ],
+    ]
+  }
 };
-
