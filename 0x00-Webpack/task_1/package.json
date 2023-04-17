@@ -1,11 +1,10 @@
 {
-  "name": "task_0",
+  "name": "task_1",
   "version": "1.0.0",
-  "description": "This is my first webpack task",
-  "main": "index.js",
+  "description": "",
+  "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +15,6 @@
   },
   "dependencies": {
     "jquery": "^3.6.4",
-    "lodash": "^4.17.21",
-    "path": "^0.12.7"
+    "lodash": "^4.17.21"
   }
 }
