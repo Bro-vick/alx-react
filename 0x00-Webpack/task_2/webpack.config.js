@@ -1,13 +1,14 @@
-const path = require('path');
+const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
   entry: {
-    main: path.resolve(__dirname, './js/dashboard_main.js'),
+    main: path.resolve(__dirname, "./js/dashboard_main.js"),
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, "public"),
+    filename: "bundle.js",
   },
   performance: {
     hints: false,
@@ -18,22 +19,28 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(gif|png|jp?g|svg)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
-          "file-loader",
           {
-            loader: "image-webpack-loader",
+            loader: 'url-loader',
             options: {
-              bypassOnDebug: true,
-              disable: true,
+              limit: 8192,
+              name: 'images/[name].[hash:7].[ext]',
+              esModule: false,
             },
           },
         ],
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
+    }),
+  ],
 };
 
