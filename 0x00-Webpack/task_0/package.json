@@ -4,7 +4,6 @@
   "description": "This is my first webpack task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
     "dev":  "webpack --mode development",
     "build": "webpack --mode production"
   },
@@ -14,7 +13,7 @@
   "devDependencies": {
     "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1"
-  }
+  },
   "dependencies": {
     "jquery": "^3.6.0"
   }
