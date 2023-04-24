@@ -8,7 +8,7 @@ import './App.css';
 const App = () => {
   return (
     <React.Fragment>
-      <Notification />
+      <Notifications />
       <div className="App">
         <Header />
         <Login />
