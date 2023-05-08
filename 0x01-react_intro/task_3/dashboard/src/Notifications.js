@@ -6,7 +6,7 @@ import { getLatestNotification } from './utils';
 const Notifications = () => {
   return (
     <div className='Notifications'>
-        <p>Here is a list of notifications</p>
+        <p>Here is the list of notifications</p>
         <button>
           style={{ position: 'absolute', top: '7px', right: '7px', background: 'none', cursor: 'pointer'}}
 				  aria-label='Close'
