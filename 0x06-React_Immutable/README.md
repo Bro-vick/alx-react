@@ -31,3 +31,4 @@ concat() is used to concatenate two lists or sets together.
 mergeDeep() is used to merge two objects together, recursively merging any nested objects or maps.
 ### Lazy Seq
 A lazy Seq is a type of immutable sequence in Immutable.js that is designed to be evaluated lazily. This means that when you create a lazy Seq, the sequence is not evaluated immediately, but is instead evaluated only when it is accessed. This can be useful in scenarios where you have a large data set and only need to access a small subset of that data, as it can help improve performance by avoiding unnecessary computations. You can create a lazy Seq using the Immutable.Seq() method, and then use various methods like map(), filter(), and take() to manipulate the sequence.
+
