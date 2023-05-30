@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import { shallow } from "enzyme";
+import "../../config/setupTest.js";
 
 describe("Header", () => {
   it("render without crashing", () => {

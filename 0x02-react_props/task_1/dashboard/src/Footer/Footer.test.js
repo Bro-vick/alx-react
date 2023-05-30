@@ -2,6 +2,7 @@ import { shallow } from "enzyme";
 import React from "react";
 import Footer from "./Footer";
 import { getFullYear, getFooterCopy } from "../utils/utils";
+import "../../config/setupTest.js";
 
 describe("Footer test", () => {
   it("should render without crashing", () => {
